@@ -1,0 +1,11 @@
+{
+  "name": "phd_db",
+  "version": "1.0.0",
+  "description": "made for phd purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "carlarsmendes",
+  "license": "ISC"
+}

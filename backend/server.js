@@ -41,7 +41,8 @@ router.get('/', (req, res) => {
 });
 
 // Use our router configuration when we call /api
-app.use('/api', router);
+// app.use('/api', router);
+app.use('/api', require('./routes'))
 // app.use('/api', require('./routes'));
 
 

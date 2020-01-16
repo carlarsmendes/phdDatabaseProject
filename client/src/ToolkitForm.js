@@ -5,17 +5,38 @@ const ToolkitForm = props => (
   <form onSubmit={props.submitToolkit}>
     <input
       type="text"
+      name="name"
+      placeholder="Name of the Toolkit"
+      value={props.text}
+      onChange={props.handleChangeText}
+    />
+    <input 
+    type="text"
       name="author"
-      placeholder="Your name…"
+      placeholder="Author"
       value={props.author}
       onChange={props.handleChangeText}
     />
-    <input
+        <input
       type="text"
-      name="text"
-      placeholder="Say something..."
+      name="category"
+      placeholder="Category"
       value={props.text}
-      onChange={props.handleTextChange}
+      onChange={props.handleChangeText}
+    />
+            <input
+      type="text"
+      name="version"
+      placeholder="Version"
+      value={props.text}
+      onChange={props.handleChangeText}
+    />
+                <input
+      type="text"
+      name="link"
+      placeholder="Link"
+      value={props.text}
+      onChange={props.handleChangeText}
     />
     <button type="submit">Submit</button>
   </form>
@@ -24,13 +45,19 @@ const ToolkitForm = props => (
 ToolkitForm.propTypes = {
   submitToolkit: PropTypes.func.isRequired,
   handleChangeText: PropTypes.func.isRequired,
-  text: PropTypes.string,
+  name: PropTypes.string,
   author: PropTypes.string,
+  version: PropTypes.string,
+  category: PropTypes.string,
+  link: PropTypes.string
 };
 
 ToolkitForm.defaultProps = {
-  text: '',
+  name: '',
   author: '',
+  version: '',
+  category: '',
+  link: ''
 };
 
 export default ToolkitForm;

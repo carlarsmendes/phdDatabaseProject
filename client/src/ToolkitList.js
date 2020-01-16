@@ -4,7 +4,12 @@ import Toolkit from './Toolkit';
 
 const ToolkitList = (props) => {
   const toolkitNodes = props.data.map(toolkit => (
-    <Toolkit author={toolkit.author} key={toolkit._id} id={toolkit._id}>
+    <Toolkit author={toolkit.author} name={toolkit.name}  category={toolkit.category} version={toolkit.version} 
+    link={toolkit.link} 
+    key={toolkit._id} id={toolkit._id} 
+    timestamp={toolkit.updatedAt}
+    handleUpdateToolkit={props.handleUpdateToolkit}
+      handleDeleteToolkit={props.handleDeleteToolkit}>
       { toolkit.text}
     </Toolkit>
   ));
@@ -19,8 +24,10 @@ ToolkitList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
     author: PropTypes.string,
     id: PropTypes.string,
-    text: PropTypes.string,
+    name: PropTypes.string,
   })),
+  handleDeleteToolkit: PropTypes.func.isRequired,
+  handleUpdateToolkit: PropTypes.func.isRequired,
 };
 
 ToolkitList.defaultProps = {

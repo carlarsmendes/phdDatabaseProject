@@ -26,6 +26,7 @@
     padding: 10px 20px;
     margin-bottom: 10px;
     display: flex;
+
 }
 
 .singleToolkitContent {
@@ -33,14 +34,17 @@
     background-color: #fff;
     border-radius: 25px;
     padding: 10px;
-    display: inline-flex;
+    display: flex;
+        flex-flow: column nowrap;
+    /* border:3px solid yellow; */
 }
 
+/* 
 .userImage {
     height: 35px;
     margin-right: 10px;
     border-radius: 50%;
-}
+} */
 
 
 .singleToolkitContent h3 {
@@ -68,7 +72,6 @@
 
 .singleToolkitButtons a {
     margin: 0px 3px;
-    ;
     padding-top: 10px;
     cursor: pointer;
     font-size: 10px;
@@ -84,6 +87,8 @@
 
 .form form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 15px 0;
 }
 
@@ -91,7 +96,7 @@
     height: 30px;
     padding-left: 10px;
     border: 1px solid #c1c1c1;
-    margin-right: 10px;
+    margin-bottom: 10px;
     border-radius: 20px;
     flex: 3;
 }
@@ -104,6 +109,8 @@
     color: #999;
     border-radius: 5px;
     border: 1px solid #999;
+    width: 300px;
+    text-align: center;
 }
 
 .form button:hover {

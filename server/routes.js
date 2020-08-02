@@ -4,12 +4,12 @@ const express = require("express");
 const router = express.Router();
 import Toolkit from './models/Toolkit';
 
-router.get('/', (req, res) => {
+/*router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
-});
-
+});*/
 
 router.get('/toolkits', (req, res) => {
+    console.log("route to show all toolkits");
     Toolkit.find((err, toolkits) => {
       if (err) {return res.json({ success: false, error: err });}
       else {
@@ -18,12 +18,22 @@ router.get('/toolkits', (req, res) => {
       }
         });
   });
+
+router.get("/toolkits/:id", async (req, res) => {
+    try {
+        const toolkit = await Toolkit.findOne({ _id: req.params.id });
+        res.send(toolkit);
+    } catch (error) {
+        res.status(404);
+        res.send({ error: "Toolkit doesn't exist!" });
+    }
+});
   
   router.post('/toolkits', (req, res) => {
     const toolkit = new Toolkit();
     // body parser lets us use the req.body
     const { name, author, version,category,link } = req.body;
-    console.log("creating toolkit",req.body)
+    console.log("creating toolkit",req.body);
     
     if (!author || !name) {
       // we should throw an error. we can do this check on the front end

@@ -11,16 +11,19 @@ router.get('/', (req, res) => {
 
 router.get('/toolkits', (req, res) => {
     Toolkit.find((err, toolkits) => {
-      if (err) return res.json({ success: false, error: err });
-      return res.json({ success: true, data: toolkits });
-    });
+      if (err) {return res.json({ success: false, error: err });}
+      else {
+          console.log("Toolkits called");
+          return res.json({ success: true, data: toolkits });
+      }
+        });
   });
   
   router.post('/toolkits', (req, res) => {
     const toolkit = new Toolkit();
     // body parser lets us use the req.body
     const { name, author, version,category,link } = req.body;
-    console.log("",req.body)
+    console.log("creating toolkit",req.body)
     
     if (!author || !name) {
       // we should throw an error. we can do this check on the front end
@@ -69,8 +72,6 @@ router.get('/toolkits', (req, res) => {
       return res.json({ success: true });
     });
   });
-
-
 
 
 module.exports = router;

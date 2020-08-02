@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import PropTypes from 'prop-types';
 import Toolkit from './Toolkit';
 
@@ -34,4 +34,4 @@ ToolkitList.defaultProps = {
   data: [],
 };
 
-export default ToolkitList;
+export default ToolkitList;*/

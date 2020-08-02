@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import PropTypes from 'prop-types';
 
 const ToolkitForm = props => (
@@ -60,4 +60,4 @@ ToolkitForm.defaultProps = {
   link: ''
 };
 
-export default ToolkitForm;
+export default ToolkitForm;*/

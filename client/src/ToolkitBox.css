@@ -1,4 +1,4 @@
-.container {
+/*.container {
     background-color: #f1f1f1;
     box-sizing: border-box;
     padding: 25px;
@@ -37,7 +37,7 @@
     display: flex;
         flex-flow: column nowrap;
     /* border:3px solid yellow; */
-}
+
 
 /* 
 .userImage {
@@ -46,7 +46,7 @@
     border-radius: 50%;
 } */
 
-
+/*
 .singleToolkitContent h3 {
     margin: 0;
     padding-right: 5px;
@@ -117,4 +117,4 @@
     cursor: pointer;
     color: #385997;
     border-color: #385997;
-}
+}*/

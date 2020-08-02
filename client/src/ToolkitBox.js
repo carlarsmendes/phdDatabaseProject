@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import ToolkitList from './ToolkitList';
-import ToolkitForm from './ToolkitForm';
-// import DATA from './data';
+/*import React, { Component } from 'react';
+//import ToolkitList from './ToolkitList';
+//import ToolkitForm from './ToolkitForm';
+import DATA from './data';
 import './ToolkitBox.css';
 
-class ToolkitBox extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -142,4 +142,4 @@ class ToolkitBox extends Component {
   }
 }
 
-export default ToolkitBox;
+export default App;*/

@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
@@ -29,4 +29,4 @@ Toolkit.propTypes = {
   timestamp: PropTypes.string.isRequired,
 };
 
-export default Toolkit;
+export default Toolkit;*/

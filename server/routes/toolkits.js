@@ -2,7 +2,7 @@
 const express = require("express");
 // const { isLoggedIn } = require("../middlewares");
 const router = express.Router();
-import Toolkit from './models/Toolkit';
+import Toolkit from '../models/Toolkit';
 
 /*router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });

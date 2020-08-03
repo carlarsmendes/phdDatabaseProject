@@ -7,8 +7,8 @@ const Schema = mongoose.Schema;
 const ToolSchema = new Schema({
     name: String,
     skill:[{type: String}],
-    toolkits:[],
-    competencies:[]
+    toolkits: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Toolkit' }],
+    competencies: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Competency' }]
 }, { timestamps: true });
 
 // export our module to use in server.js

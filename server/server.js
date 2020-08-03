@@ -15,6 +15,7 @@ const mongoose = require('mongoose');
 // and create our instances
 const app = express();
 const router = express.Router();
+const requireDir = require('require-dir');
 
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.PORT || 3010;
@@ -45,7 +46,11 @@ app.get('/', (req, res) => {
 
 // Use our router configuration when we call /api
 app.use('/api', router);
-app.use('/api', require('./routes'));
+
+//app.use('/api', require('./routes/toolkits'));
+//avoiding repetion on routes definition
+var routes = requireDir('./routes'); // https://www.npmjs.org/package/require-dir
+for (var i in routes) app.use('/api/', routes[i]);
 
 // For any routes that starts with "/api", catch 404 and forward to error handler
 app.use('/api/*', (req, res, next) => {

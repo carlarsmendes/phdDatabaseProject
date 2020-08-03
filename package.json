@@ -23,7 +23,8 @@
     "mongodb": "^2.2.16",
     "mongoose": "^5.8.6",
     "morgan": "^1.9.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "require-dir": "^1.2.0"
   },
   "devDependencies": {}
 }

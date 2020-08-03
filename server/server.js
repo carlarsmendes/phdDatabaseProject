@@ -4,7 +4,7 @@ const path = require('path');
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient; 
 const bodyParser = require('body-parser');
-/*import bodyParser from 'body-parser';
+/*
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';*/

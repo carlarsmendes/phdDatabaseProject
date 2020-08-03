@@ -19,9 +19,9 @@ router.get('/toolkits', (req, res) => {
         });
   });
 
-router.get("/toolkits/:id", async (req, res) => {
+router.get("/toolkits/:toolkitId", async (req, res) => {
     try {
-        const toolkit = await Toolkit.findOne({ _id: req.params.id });
+        const toolkit = await Toolkit.findOne({ _id: req.params.toolkitId });
         res.send(toolkit);
     } catch (error) {
         res.status(404);
@@ -54,7 +54,6 @@ router.get("/toolkits/:id", async (req, res) => {
   });
 
 //update your toolkit
-
   router.put('/toolkits/:toolkitId', (req, res) => {
     const { toolkitId } = req.params;
     if (!toolkitId) {
@@ -72,14 +71,16 @@ router.get("/toolkits/:id", async (req, res) => {
     });
   });
   
+  //delete your toolkit
   router.delete('/toolkits/:toolkitId', (req, res) => {
     const { toolkitId } = req.params;
+   
     if (!toolkitId) {
       return res.json({ success: false, error: 'No toolkit id provided' });
     }
     Toolkit.remove({ _id: toolkitId }, (error, toolkit) => {
       if (error) return res.json({ success: false, error });
-      return res.json({ success: true });
+        return res.json({ success: true, message: `Your toolkit was removed`});
     });
   });
 

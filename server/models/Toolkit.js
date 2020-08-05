@@ -1,5 +1,5 @@
 // model/comment.js
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // create new instance of the mongoose.schema. the schema takes an
@@ -15,4 +15,5 @@ const ToolkitSchema = new Schema({
 }, { timestamps: true });
 
 // export our module to use in server.js
-export default mongoose.model('Toolkit', ToolkitSchema);
+//export default mongoose.model('Toolkit', ToolkitSchema);
+module.exports = mongoose.model('Toolkit', ToolkitSchema);

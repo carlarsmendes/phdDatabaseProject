@@ -10,16 +10,17 @@ const CompetencySchema = new Schema({
         required: [true, 'The name is required'],
         minlength: 1
     },
-    Summary: {
+    summary: {
         type: String,
         default:'Brief summary of the competency here'
     },
-    Sources:[String],
+    sources:[String],
     _tools: [{ type: Schema.Types.ObjectId, ref: 'Tool' }],
-    _competencies: [{ type: mSchema.Types.ObjectId, ref: 'Competency' }]
+    _other_competencies: [{ type: Schema.Types.ObjectId, ref: 'Competency' }]
     }, 
     { timestamps: true }
 );
 
 // export our module to use in server.js
-export default mongoose.model('Competency', CompetencySchema);
+
+module.exports = mongoose.model('Competency', CompetencySchema);

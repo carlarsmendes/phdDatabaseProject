@@ -52,12 +52,15 @@ let toolkitDocs = [
 
 let toolDocs = [
     new Tool({
+        name: "tool_1",
         _toolkits: toolkitDocs[0]._id
     }),
     new Tool({
+        name: "tool_2",
         _toolkits: toolkitDocs[1]._id
     }),
     new Tool({
+        name: "tool_3",
         _toolkits: toolkitDocs[2]._id
     })
 ]
@@ -83,4 +86,4 @@ Promise.all([
     .catch(err => {
         mongoose.disconnect();
         throw err;
-    })
+    });

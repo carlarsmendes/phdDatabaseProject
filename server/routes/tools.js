@@ -3,6 +3,7 @@ const express = require("express");
 // const { isLoggedIn } = require("../middlewares");
 const router = express.Router();
 import Tool from '../models/Tool';
+import Toolkit from '../models/Toolkit';
 
 /*router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });
@@ -19,14 +20,14 @@ router.get('/tools', (req, res) => {
         });
   });
 
-router.get("/tools/:toolId", async (req, res) => {
-    try {
-        const tool = await Tool.findOne({ _id: req.params.toolId });
-        res.send(tool);
-    } catch (error) {
-        res.status(404);
-        res.send({ error: "Tool doesn't exist!" });
-    }
+router.get("/tools/:toolId", (req, res, next) => {
+    Tool.findOne({ _id: req.params.toolId })
+        .populate('_toolkits')
+        .then(tool => {
+            //res.json(response);
+            res.send(tool);
+        })
+        .catch(err => next(err));
 });
   
   router.post('/tools', (req, res) => {

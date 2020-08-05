@@ -20,8 +20,8 @@ const requireDir = require('require-dir');
 // set our port to either a predetermined port number if you have set it up, or 3001
 const API_PORT = process.env.PORT || 3010;
 // now we should configure the API to use bodyParser and look for JSON data in the request body
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
 /*app.use(logger('dev'));*/
 
 const uri = process.env.MONGODB_URI || `mongodb://localhost/PHD-DB`;

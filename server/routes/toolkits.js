@@ -31,8 +31,10 @@ router.get("/toolkits/:toolkitId", async (req, res) => {
   
   router.post('/toolkits', (req, res) => {
     const toolkit = new Toolkit();
+      
     // body parser lets us use the req.body
-    const { name, author, version,category,link } = req.body;
+      const { name, author, version, category, link } = req.body;
+
     console.log("creating toolkit",req.body);
     
     if (!author || !name) {
@@ -61,9 +63,13 @@ router.get("/toolkits/:toolkitId", async (req, res) => {
     }
     Toolkit.findById(toolkitId, (error, toolkit) => {
       if (error) return res.json({ success: false, error });
-      const { author, name } = req.body;
-      if (author) toolkit.author = author;
-      if (name) toolkit.name = name;
+        const { name, author, version, category, link } = req.body;
+
+        if (author) toolkit.author = author;
+        if (name) toolkit.name = name;
+        if (version) toolkit.version = version;
+        if (category) toolkit.category = category;
+        if (link) toolkit.link = link;
       toolkit.save(error => {
         if (error) return res.json({ success: false, error });
         return res.json({ success: true });

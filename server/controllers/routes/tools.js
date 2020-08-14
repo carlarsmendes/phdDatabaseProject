@@ -2,8 +2,8 @@
 const express = require("express");
 // const { isLoggedIn } = require("../middlewares");
 const router = express.Router();
-import Tool from '../models/Tool';
-import Toolkit from '../models/Toolkit';
+const Tool = require('../models/Tool');
+const Toolkit = require('../models/Toolkit');
 
 /*router.get('/', (req, res) => {
   res.json({ message: 'Hello, World!' });

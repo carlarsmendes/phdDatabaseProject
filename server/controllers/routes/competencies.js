@@ -1,9 +1,7 @@
 const express = require("express");
 // const { isLoggedIn } = require("../middlewares");
 const router = express.Router();
-import Tool from '../models/Tool';
-import Toolkit from '../models/Toolkit';
-import Competency from '../models/Competency';
+const Competency =require('../models/Competency');
 
 
 router.get('/competencies', (req, res) => {

@@ -1,13 +1,13 @@
 // model/comment.js
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // create new instance of the mongoose.schema. the schema takes an
 // object that shows the shape of your database entries.
-const PhaseSchema = new Schema({
+const ActivitySchema = new Schema({
     name: String,
-    phase:[{type: mongoose.Schema.Types.ObjectId, ref: 'Activity'}],
+    tool:[{type: mongoose.Schema.Types.ObjectId, ref: 'Tool'}],
 }, { timestamps: true });
 
 // export our module to use in server.js
-export default mongoose.model('Phase', PhaseSchema);
+export default mongoose.model('Activity', ActivitySchema);

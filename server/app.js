@@ -10,6 +10,7 @@ const expressSession = require('express-session');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
+var cors = require('cors')
 //const serveFavicon = require('serve-favicon');
 //const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 //const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
@@ -22,6 +23,11 @@ const app = express();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
+app.use(express.static(join(__dirname, './../client/build')));
+//app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
+
+
 app.use(
     expressSession({
         secret: process.env.SESSION_SECRET,

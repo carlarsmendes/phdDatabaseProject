@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 //import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-//import ProtectedRoute from './components/ProtectedRoute';
-
+//import Toolkit from './views/Toolkit';
+import axios from "axios";
+import Competency from './views/Competency/Competency';
+import "./index.scss";
 //import './App.css';
 
 //import { loadUserInformation as loadUserInformationService } from './services/authentication';
@@ -15,11 +17,18 @@ class App extends Component {
         };
     }
 
+    /*componentDidMount() {
+        axios.get("/users.json").then((response) => {
+            this.setState({ users: response.data });
+        });
+    }*/
+
     render() {
         
         return (
-            <div className="App">   
-            Text here                 
+            <div className="App"> 
+                <h1>Competencies here</h1>  
+                    <Competency />    
             </div>
         );
     }

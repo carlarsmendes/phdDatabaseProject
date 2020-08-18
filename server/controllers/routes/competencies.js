@@ -9,7 +9,7 @@ router.get('/competencies', (req, res) => {
         if (err) { return res.json({ success: false, error: err }); }
         else {
             console.log("Competencies called");
-            return res.json({ success: true, data: competencies });
+            return res.json({ competencies });
         }
     });
 });
